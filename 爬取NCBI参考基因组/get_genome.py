@@ -6,9 +6,12 @@ from bs4 import BeautifulSoup
 import lxml
 
 
+can = []
+can_not = []
+
 def down_genome(name):
-    can_not = []
-    can = []
+  #  can_not = []
+  #  can = []
     txt = requests.get(url='https://www.ncbi.nlm.nih.gov/genome/?term='+name).text
     soup = BeautifulSoup(txt,'lxml')
     x = soup.find('div').find(class_="refgenome_sensor")
